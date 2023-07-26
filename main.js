@@ -182,8 +182,9 @@ const eventListeners = () => {
     if (e.target.id) {
       // get the video ID off the button ID
       const videoStuff = e.target.id.split("--");
+      console.log(videoStuff)
       // or
-      //const [method, videoId] = e.target.id.split("--")
+      const [, videoId] = e.target.id.split("--")
 
 
       // find the index of the object in the array
@@ -194,7 +195,7 @@ const eventListeners = () => {
       // if watch: grab the ID and rerender the videoPlayer with that ID as an argument
     if (e.target.id.includes('watch')) {
         videoPlayer(videoId);     
-        
+        console.log(videoId);
         
         // scroll to top of page
         document.location = '#';
